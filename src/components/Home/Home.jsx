@@ -1,22 +1,18 @@
 // @flow
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-type Props = {
-};
+type Props = {};
 
 class Home extends Component<Props> {
   props: Props;
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   render() {
     return (
       <>
         <div>
-          <p>
-            Test
-          </p>
+          <p>Test</p>
         </div>
       </>
     );

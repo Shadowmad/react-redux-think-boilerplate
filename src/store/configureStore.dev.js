@@ -94,12 +94,19 @@ export function createStoreOwn(url: string = '/') {
 
   // Dev tools are helpful
   if (process.env.NODE_ENV === 'development' && !isServer) {
-    const {devToolsExtension} = window.devToolsExtension;
+    const {devToolsExtension} = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
     if (typeof devToolsExtension === 'function') {
       enhancers.push(devToolsExtension());
     }
   }
+
+  const composeEnhancers =
+    typeof window === 'object' &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+      }) : compose;
 
   const middleware = [thunk, routerMiddleware(history)];
   if (process.env.NODE_ENV === 'development' && !isServer) {
@@ -114,7 +121,8 @@ export function createStoreOwn(url: string = '/') {
       middleware.push(logger);
     }
   }
-  const composedEnhancers = compose(
+
+  const composedEnhancers = composeEnhancers(
     applyMiddleware(...middleware),
     ...enhancers
   );

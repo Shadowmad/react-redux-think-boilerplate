@@ -9,6 +9,7 @@ import * as serviceWorker from './serviceWorker';
 
 const { store, history } = createStoreOwn();
 
+console.log(store);
 
 hydrate(
   <AppContainer>

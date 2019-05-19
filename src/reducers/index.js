@@ -6,7 +6,7 @@ export default function createRootReducer(history: {}) {
   const routerReducer = connectRouter(history);
   return connectRouter(history)(
     combineReducers({
-      router: routerReducer,
+      router: routerReducer
     })
   );
 }
