@@ -3,17 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "connected-react-router": "^6.3.0",
     "history": "^4.7.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-hot-loader": "^4.6.5",
     "react-redux": "^6.0.0",
+    "react-router": "latest",
     "react-router-dom": "^4.3.1",
     "react-scripts": "3.0.1",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0",
-    "react-router": "latest"
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^17.0.0",
@@ -36,7 +37,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:fix": "eslint src/**/*.js --fix"
   },
   "eslintConfig": {
     "extends": "react-app"

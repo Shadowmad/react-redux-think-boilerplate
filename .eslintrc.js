@@ -1,10 +1,10 @@
-{
+module.exports = {
   "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
     "allowImportExportEverywhere": true
   },
-  "extends": ["airbnb", "prettier", "prettier/flowtype", "prettier/react"],
+  "extends": ["react-app", "airbnb", "prettier", "prettier/flowtype", "prettier/react"],
   "env": {
     "browser": true,
     "node": true
@@ -61,12 +61,5 @@
     ],
     "react/prefer-stateless-function": "off"
   },
-  "plugins": ["flowtype", "import", "promise", "compat", "react"],
-  "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "webpack.config.eslint.js"
-      }
-    }
-  }
+  "plugins": ["flowtype", "import", "promise", "compat", "react"]
 }
